@@ -148,7 +148,7 @@ public class BluetoothPrinter extends CordovaPlugin {
 	boolean openBT(CallbackContext callbackContext) throws IOException {
 		try {
 			// Standard SerialPortService ID
-			UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+			UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 			mmSocket = mmDevice.createRfcommSocketToServiceRecord(uuid);
 			mmSocket.connect();
 			mmOutputStream = mmSocket.getOutputStream();
@@ -161,7 +161,7 @@ public class BluetoothPrinter extends CordovaPlugin {
 			String errMsg = e.getMessage();
 			Log.e(LOG_TAG, errMsg);
 			e.printStackTrace();
-			callbackContext.error(errMsg);
+			callbackContext.error(errMsg + '. poop.');
 		}
 		return false;
 	}
